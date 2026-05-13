@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# External and internal model weights/artifacts
+# Clone or download separately — see README.
+models/
+artifacts/
+weights/
+
+# Experiment outputs
+outputs/
+results/
+logs/
+runs/
+wandb/
+
+# Archives and model checkpoints
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Medical/image/data arrays
+*.nii
+*.nii.gz
+*.npy
+*.npz

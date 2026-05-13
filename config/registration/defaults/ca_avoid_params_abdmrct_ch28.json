@@ -1,0 +1,68 @@
+{
+  "dataset_name": "abdmrct",
+  "channel_size": 28,
+  "base_channels": 12,
+  "default_params": {
+    "lambda_weight": 1.0,
+    "iters_adam": [
+      60
+    ],
+    "iters_smooth": [
+      2
+    ],
+    "gauss_sigma": 1.6
+  },
+  "num_total_combinations": 96,
+  "num_failed": 8,
+  "num_succeeded": 88,
+  "failed_params": [
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 1,
+      "disp_hw": 6,
+      "error": "CUDA out of memory. Tried to allocate 13.00 GiB. GPU 0 has a total capacity of 47.54 GiB of which 10.55 GiB is free. Including non-PyTorch memory, this process has 36.98 GiB memory in use. Of the allocated memory 36.32 GiB is allocated by PyTorch, and 348.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 1,
+      "disp_hw": 7,
+      "error": "CUDA out of memory. Tried to allocate 17.30 GiB. GPU 0 has a total capacity of 47.54 GiB of which 15.11 GiB is free. Including non-PyTorch memory, this process has 32.42 GiB memory in use. Of the allocated memory 31.76 GiB is allocated by PyTorch, and 348.45 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 2,
+      "disp_hw": 6,
+      "error": "CUDA out of memory. Tried to allocate 13.00 GiB. GPU 0 has a total capacity of 47.54 GiB of which 10.55 GiB is free. Including non-PyTorch memory, this process has 36.98 GiB memory in use. Of the allocated memory 36.32 GiB is allocated by PyTorch, and 348.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 2,
+      "disp_hw": 7,
+      "error": "CUDA out of memory. Tried to allocate 17.30 GiB. GPU 0 has a total capacity of 47.54 GiB of which 15.11 GiB is free. Including non-PyTorch memory, this process has 32.42 GiB memory in use. Of the allocated memory 31.76 GiB is allocated by PyTorch, and 348.45 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 3,
+      "disp_hw": 6,
+      "error": "CUDA out of memory. Tried to allocate 13.00 GiB. GPU 0 has a total capacity of 47.54 GiB of which 10.55 GiB is free. Including non-PyTorch memory, this process has 36.98 GiB memory in use. Of the allocated memory 36.32 GiB is allocated by PyTorch, and 348.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 3,
+      "disp_hw": 7,
+      "error": "CUDA out of memory. Tried to allocate 17.30 GiB. GPU 0 has a total capacity of 47.54 GiB of which 15.11 GiB is free. Including non-PyTorch memory, this process has 32.42 GiB memory in use. Of the allocated memory 31.76 GiB is allocated by PyTorch, and 348.45 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 4,
+      "disp_hw": 6,
+      "error": "CUDA out of memory. Tried to allocate 13.00 GiB. GPU 0 has a total capacity of 47.54 GiB of which 10.55 GiB is free. Including non-PyTorch memory, this process has 36.98 GiB memory in use. Of the allocated memory 36.32 GiB is allocated by PyTorch, and 348.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    },
+    {
+      "grid_sp": 2,
+      "grid_sp_adam": 4,
+      "disp_hw": 7,
+      "error": "CUDA out of memory. Tried to allocate 17.30 GiB. GPU 0 has a total capacity of 47.54 GiB of which 15.11 GiB is free. Including non-PyTorch memory, this process has 32.42 GiB memory in use. Of the allocated memory 31.76 GiB is allocated by PyTorch, and 348.45 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+    }
+  ]
+}

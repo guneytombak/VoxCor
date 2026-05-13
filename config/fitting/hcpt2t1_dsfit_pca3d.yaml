@@ -1,0 +1,56 @@
+__output_dir__: "./weights/hcpt2t1/dsfit_pca3d"
+
+__otherwise__:
+    dataset:
+        name: "hcpt2t1"
+        subset: "train1"
+        perm2: True
+        mask: False
+    pp: "hcpt2t1"
+    scale: "__none__"
+    every_n: 3
+    device: "cuda"
+    mask_mode: "gen"
+    mask_use: "fit"
+    maskgen:
+        name: "mind"
+        msk_th: 0.99
+        mind_r: 2
+        mind_d: 2
+        connectivity: 6
+        max_iters: "__none__"
+        final_dilate: 0
+    intra_proj: "identity"
+    extra_proj:
+        name: "pca_lowrank"
+        nc: 24
+    cat_proj:
+        name: "pca3d"
+        nc: 24
+        grid_sp: 4
+        pregsp: True
+
+dinov2_dsfit_pca3d:
+    model: 
+        name: "dinov2"
+        variant: "large"
+        batch_size: 16
+    scale: 4
+
+dinov3_dsfit_pca3d:
+    model: 
+        name: "dinov3"
+        variant: "large"
+        batch_size: 16
+    scale: 4
+
+sam3i_dsfit_pca3d:
+    model:
+        name: "sam3i"
+        batch_size: 16
+
+medsam2i_dsfit_pca3d:
+    model:
+        name: "medsam2i"
+        batch_size: 16
+    scale: 4

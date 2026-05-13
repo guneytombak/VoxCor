@@ -1,0 +1,37 @@
+fixmov:
+    mr: "fix"
+    ct: "mov"
+hps_params_path: "config/registration/defaults/convex_adam_sweep_abdmrct_ch28_nc400.json"
+dataset_hps: 
+    name: "abdmrct"
+    mask: False
+dataset_test:
+    type: "lnocv"
+    n: 2
+    name: "perm0"
+    path: "config/data/defaults/abdmrct_l2ocv_perms.json"
+
+registration:
+    ca:
+        affine: "none"
+        l2_normalize: True
+    gica:
+        affine: "trans"
+        l2_normalize: True
+
+
+output_dir: "./results/registration/abdmrct/am0p1_<fit_type>/am0p1_<model>_<fit_type>"
+
+model:
+    type: "vit3d"
+    path: "./weights/abdmrct/<fit_type>/<model>_<fit_type>"
+    # if wrapper is not specified, it defaults to identity (i.e. no wrapper, direct use of features)
+    wrapper: # am0p1: add mind with multiplier 0.1, select first 16 channels, no norm
+        name: basicadd2mind
+        select: "[:16]"
+        norm: none
+        mult: 0.1
+        
+features:
+    axi: "axi" # Axial PCA
+    proj: "proj" # Projection (WPLS, PCA3D, etc.)

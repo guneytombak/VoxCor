@@ -1,0 +1,10 @@
+model_dir: "./weights/hcpt2t1/<fit_type>/<model>_<fit_type>"
+output_dir: "results/lmscm/hcpt2t1/<fit_type>/<model>_<fit_type>"
+dataset:
+    name: "hcpt2t1"
+    subset: "test1"
+features:
+    sag: "sag"
+    cor: "cor"
+    axi: "axi"
+    proj: "proj"

@@ -1,0 +1,9 @@
+{
+    "lambda_weight": 1.0,
+    "grid_sp": 3,
+    "disp_hw": 5,
+    "grid_sp_adam": 2,
+    "iters_adam": 80,
+    "iters_smooth": 1,
+    "gauss_sigma": 1.6
+}

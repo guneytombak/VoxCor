@@ -1,0 +1,12 @@
+model_dir: "./weights/abdmrct/<fit_type>/<model>_<fit_type>"
+output_dir: "results/lmscm/abdmrct/<fit_type>/<model>_<fit_type>"
+perm: 
+    name: "perm0"
+    path: "config/data/defaults/abdmrct_l2ocv_perms.json"
+dataset:
+    name: "abdmrct"
+features:
+    sag: "sag"
+    cor: "cor"
+    axi: "axi"
+    proj: "proj"

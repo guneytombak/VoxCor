@@ -1,0 +1,63 @@
+__output_dir__: "./weights/abdmrct/dsfit"
+
+__otherwise__:
+    dataset:
+        name: "abdmrct"
+        mask: False
+    pp: "abdmrct"
+    perm: "perm0"
+    scale: "__none__"
+    every_n: 3
+    device: "cuda"
+    mask_mode: "gen"
+    mask_use: "fit"
+    maskgen:
+        name: "mind"
+        msk_th: 0.99
+        mind_r: 2
+        mind_d: 2
+        connectivity: 6
+        max_iters: "__none__"
+        final_dilate: 0
+    intra_proj: "identity"
+    extra_proj:
+        name: "pca_lowrank"
+        nc: 24
+    cat_proj:
+        name: "wpls"
+        nc: 24
+        way: "CT->MR"
+        reg: "trans"
+        match: "i"
+        grid_sp: 4
+        pregsp: True
+        demean: True
+        ladder_weight: [0.0, 0.0, 1.0]
+        mask_mode: "inter"
+        voxel_weight: "edge"
+
+
+dinov2_dsfit:
+    model:
+        name: "dinov2"
+        variant: "large"
+        batch_size: 16
+    scale: 5.3
+
+dinov3_dsfit:
+    model:
+        name: "dinov3"
+        variant: "large"
+        batch_size: 16
+    scale: 6
+
+sam3i_dsfit:
+    model:
+        name: "sam3i"
+        batch_size: 16
+
+medsam2i_dsfit:
+    model:
+        name: "medsam2i"
+        batch_size: 16
+    scale: 6
