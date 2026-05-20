@@ -1,13 +1,16 @@
 # VoxCor: Training-Free Volumetric Features for Multimodal Voxel Correspondence
 
-**Guney Tombak, Ertunc Erdil, Ender Konukoglu**  
+**Guney Tombak, Ertunc Erdil, and Ender Konukoglu**  
+
 Biomedical Image Computing Group, ETH Zurich
 
-![VoxCor Pipeline](assets/voxcor_pipeline.png)
+[[Paper]](https://arxiv.org/abs/2605.13798) [[Code]](https://github.com/guneytombak/VoxCor)
+
+![VoxCor Pipeline](assets/voxcor_pipeline.svg)
 
 VoxCor is a training-free fit–transform method that produces reusable volumetric feature representations from frozen 2D ViT foundation models (DINOv2, DINOv3, MedSAM2, SAM3). A single offline fitting phase—using closed-form weighted partial least squares (WPLS) on a small set of paired volumes—yields modality-specific projection matrices that can be applied to new volumes by ViT inference and linear projection alone, without re-running registration. Voxel correspondences can then be queried by nearest-neighbor search.
 
-This repository contains the public release code for our paper. The arXiv preprint will be linked here once available. Some paths and configuration files are designed to reproduce the paper experiments and may require adapting dataset locations to your local setup.
+This repository contains the public release code for our paper: [VoxCor: Training-Free Volumetric Features for Multimodal Voxel Correspondence](https://arxiv.org/abs/2605.13798). Some paths and configuration files are designed to reproduce the paper experiments and may require adapting dataset locations to your local setup.
 
 ---
 
@@ -64,37 +67,8 @@ git clone https://github.com/facebookresearch/dinov3.git models/dinov3
 git clone https://github.com/bowang-lab/MedSAM2.git models/medsam2
 
 # SAM3
-git clone https://github.com/facebookresearch/sam3 models/sam3
+git clone https://github.com/facebookresearch/sam3.git models/sam3
 ```
-
-Pre-trained weights are loaded automatically by each wrapper on first use, or can be placed in the corresponding `models/<name>/` directory as documented by the upstream repositories.
-
----
-
-### Pre-Fitted VoxCor Weights
-
-Pre-fitted VoxCor projection weights are provided as a separate release asset, `weights.tar.gz`, on the GitHub Releases page.
-
-Download link: TODO
-
-These weights can be used directly for transform-time feature extraction, provided that the corresponding encoder repository and pretrained backbone weights are installed correctly as described above.
-
-After downloading `weights.tar.gz` from the release page, place it in the repository root and extract:
-
-```bash
-tar -xzf weights.tar.gz
-```
-
-This should create a `weights/` directory containing the fitted projection files. The weights are organized by dataset and encoder, and can be loaded with:
-
-```python
-from src.extraction.vit.vit3d import ViT3D
-
-voxcor = ViT3D.load_pt("weights/<dataset>/<fit>/<encoder>_<fit>/vit3d_model_<specs>.pt")
-features = voxcor.transform(batch)
-```
-
-The loaded weights include the fitted PCA and WPLS/PCA3D projection matrices, but they do not include the external ViT backbone repositories themselves. Therefore, the corresponding encoder code and pretrained backbone weights must still be available under `models/`. At transform time, no registration, masks, or fitting-time correspondences are required.
 
 ---
 
@@ -191,7 +165,7 @@ python scripts/landmarking/lmscm_quad_perm_vit3d.py config/path/to/config.yaml
 | Key | Backbone | Variant used |
 | --- | --- | --- |
 | `dinov2` | DINOv2 | ViT-L/14 |
-| `dinov3` | DINOv3 | ViT-L/14 |
+| `dinov3` | DINOv3 | ViT-L/16 |
 | `medsam2i` | MedSAM2 image encoder | `MedSAM2_latest.pt` |
 | `sam3i` | SAM3 image encoder | `sam3.pt` |
 
@@ -201,10 +175,18 @@ The encoder is set via the `model` field in the experiment configuration YAML.
 
 ## Citation
 
-If you use VoxCor, please cite our paper:
+If you use VoxCor, please cite our paper: [arXiv:2605.13798](https://arxiv.org/abs/2605.13798)
 
 ```bibtex
-TODO
+@misc{tombak2026voxcor,
+      title={VoxCor: Training-Free Volumetric Features for Multimodal Voxel Correspondence}, 
+      author={Guney Tombak and Ertunc Erdil and Ender Konukoglu},
+      year={2026},
+      eprint={2605.13798},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.13798}, 
+}
 ```
 
 ## Third-Party Methods
@@ -246,3 +228,9 @@ TODO
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 External model repositories, including DINOv2, DINOv3, MedSAM2, and SAM3 are subject to their own licenses.
+
+---
+
+## Acknowledgements
+
+We acknowledge The LOOP Zurich – Medical Research Center, Zurich, Switzerland and Georg and Berta Schwyzer-Winiker Foundation for the financial support for this project.

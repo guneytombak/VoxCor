@@ -55,7 +55,7 @@ MODEL_REGISTRY: Dict[str, str] = {
     "dinov2":   "src.model.vit.dinov2:DinoV2Model",
     "dinov3":   "src.model.vit.dinov3:DinoV3Model",
     "sam3i":    "src.model.vit.sam3i:Sam3ImageModel",
-    "medsam2i": "src.model.vit.msam2i:MedSam2ImageModel",
+    "medsam2i": "src.model.vit.medsam2i:MedSam2ImageModel",
     "mind":     "src.model.cnn.mind:MINDModel",
     "anatomix": "src.model.cnn.anatomix:AnatomixModel",
     "anamind":  "src.model.cnn.anatomix:AnaMindModel",
